@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #4361ee;
+  position: relative;
+}
+.top-nav h2 {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 22px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0px auto;
+}
+.navbar .links ul {
+  display: flex;
+  list-style: none;
+}
+.links li a {
+  list-style: none;
+  margin-left: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+}
+.dropdown {
+  font-size: 12px;
+  border: 2px solid #4361ee;
+  border-radius: 10px;
+  font-weight: 300;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: 1s hover ease-in-out;
+}
+.dropdown:hover {
+  background-color: #4361ee;
+}
+.dropdown:hover h3 {
+  color: #ffffff;
+}
+.hamburger {
+  display: none;
+  gap: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+.bar {
+  width: 30px;
+  height: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(14px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0; /* Hide the second bar */
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(134deg) translateY(15px);
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  background-color: #ffffff;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+.mobile-menu.active {
+  display: block;
+}
+.mobile-menu li {
+  margin: 10px 0px;
+}
+.mobile-menu li a {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+
+/* start container */
+.hero-container {
+  display: grid;
+  margin: 30px 0px;
+  grid-template-columns: 1fr 1fr;
+  background-color: #1c1b37;
+  color: #ffffff;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.hero-info {
+  padding: 80px;
+}
+.hero-info h1 {
+  font-size: 48px;
+  margin: 20px 0px;
+}
+.hero-info h1 span {
+  background: linear-gradient(100deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-info p {
+  background: linear-gradient(158deg, #4648ad 9.19%, #b6bae3 44.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-img {
+  padding: 10px 1px;
+}
+.hr-line {
+  width: 60%;
+}
+
+/* live coins */
+.coin-headline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coin-container {
+  width: 80%;
+  margin: 30px auto;
+}
+.coins {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.coin-logo {
+  width: 70px;
+  height: 70px;
+}
+.coin-logo img {
+  width: 100%;
+  margin-right: 10px;
+}
+.bitcoin,
+.ethereum,
+.litecoin,
+.dogecoin {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 1px 3px 63px 6px rgba(17, 17, 26, 0.18);
+  border-radius: 20px;
+  padding: 12px 16px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.bitcoin:hover,
+.ethereum:hover,
+.litecoin:hover,
+.dogecoin:hover {
+  border: 1px solid #4361ee;
+  transform: scale(1.1);
+}
+.coin-price h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.small-hr {
+  color: rgb(121, 115, 115);
+}
+.coin-viewall {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  color: #4361ee;
+}
+.coin-viewall p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* ####### ABOUT US   ######## */
+.about-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: 80px auto;
+  padding: 20px;
+}
+.about-us-title h1 {
+  color: #212326;
+  font-size: 32px;
+}
+.about-us-title h1 span {
+  background: linear-gradient(100deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-us-info {
+  color: #797979;
+  padding: 10px;
+  letter-spacing: 1px;
+}
+.three-boxs {
+  width: 80%;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+.about-box {
+  box-shadow: 0px 0px 36px 1px rgba(56, 56, 235, 0.18);
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.about-box:hover {
+  box-shadow: 0px 0px 36px 19px rgba(56, 56, 235, 0.18);
+}
+.about-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.about-box img {
+  position: absolute;
+  top: -50px;
+  left: -30px;
+}
+.about-box p {
+  color: #797979;
+  letter-spacing: 0.8px;
+}
+/* why us */
+.why-us-section {
+  position: relative;
+}
+.why-us-section > h2 {
+  text-align: center;
+  letter-spacing: 1.7px;
+  background: linear-gradient(90deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.why-us-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 90%;
+  margin: 80px auto;
+}
+.why-us-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  z-index: -1;
+}
+.why-box {
+  width: 25%;
+  box-shadow: 0px 0px 36px 19px rgba(133, 133, 194, 0.18);
+  border-radius: 20px;
+  padding: 18px;
+  cursor: pointer;
+}
+.why-box:hover {
+  box-shadow: 0px 0px 36px 19px rgba(56, 56, 235, 0.18);
+}
+.why-box h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.why-box p {
+  font-size: 14px;
+  color: #555454;
+}
+/* contact us */
+.contact-us > h2 {
+  text-align: center;
+  letter-spacing: 1.7px;
+  background: linear-gradient(90deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-card {
+  width: 60%;
+  margin: 30px auto;
+  background: rgb(47, 43, 124);
+  border-radius: 15px;
+  padding: 40px;
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(47, 43, 124, 1) 0%,
+    rgba(95, 9, 121, 1) 43%,
+    rgba(0, 212, 255, 1) 91%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(47, 43, 124, 1) 0%,
+    rgba(95, 9, 121, 1) 43%,
+    rgba(0, 212, 255, 1) 91%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(47, 43, 124, 1) 0%,
+    rgba(95, 9, 121, 1) 43%,
+    rgba(0, 212, 255, 1) 91%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f2b7c",endColorstr="#00d4ff",GradientType=1);
+}
+.contact-card p {
+  color: #ffffff;
+}
+.contact-card .contact-details p {
+  margin-top: 20px;
+  text-align: center;
+}
+.contact-emails {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: 15px auto 0px;
+}
+.contact-emails p {
+  background-color: #ffffff;
+  backdrop-filter: blur(5px);
+  padding: 10px 16px;
+  border-radius: 15px;
+}
+.contact-emails a {
+  color: #212326;
+  letter-spacing: 1px;
+}
+/* ######>>>>> Converter  <<<<<<###### */
+.img-placed img {
+  width: 560px;
+  margin: 0px auto;
+}
+
+.container {
+  width: 600px;
+  margin: 60px auto;
+  padding: auto;
+  height: calc(700px + 80px);
+  display: block;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+input[type="number"] {
+  width: 87%;
+  margin: 40px auto 10px;
+  display: block;
+  font-size: 1rem;
+  background: none;
+  line-height: 1.5;
+  padding: 12px;
+  border-radius: 6px;
+  color: #141e37;
+  border: 1px solid rgb(221, 221, 221);
+}
+
+input[type="number"]:focus {
+  border-color: rgb(39, 125, 217);
+}
+
+#select-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+#fromCurrencyName {
+  margin-top: 0;
+  font-size: 16px;
+  color: #667c99;
+  font-weight: 600;
+  display: inline-block;
+  margin: 15px 40px 7.5px;
+}
+
+#fromCurrency {
+  width: 40%;
+}
+
+::placeholder {
+  font-size: 1rem;
+  color: rgb(20, 30, 55);
+}
+
+select {
+  margin: auto;
+  display: block;
+  font-size: 1rem;
+  padding: 12px;
+  background: none;
+  border-radius: 6px;
+  color: rgb(20, 30, 55);
+  border: 1px solid rgb(221, 221, 221);
+}
+
+select:focus {
+  border-color: rgb(0, 113, 235);
+}
+
+.primary-btn {
+  display: block;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 0px;
+  width: 87%;
+  cursor: pointer;
+  margin: 20px auto;
+  outline-offset: 4px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+  background-color: #132135;
+  border: 2px solid #132135;
+}
+
+.primary-btn:hover {
+  background-color: #84fbfb;
+  border: 2px solid #84fbfb;
+  color: #000;
+}
+
+#result {
+  color: #141e37;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media only screen and (max-width: 780px) {
+  .container {
+    width: 340px;
+    height: 615px;
+  }
+
+  .img-placed img {
+    width: 340px;
+  }
+
+  #fromCurrency {
+    width: 38%;
+  }
+
+  select {
+    width: 38%;
+  }
+
+  #fromCurrencyName {
+    margin: 15px 22px 7.5px;
+  }
+}

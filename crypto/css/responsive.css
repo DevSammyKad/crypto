@@ -1,0 +1,146 @@
+/* ###### FOR LAPTOP   */
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .links li a {
+    margin-left: 25px;
+    font-size: 14px;
+  }
+  .three-boxs {
+    width: 90%;
+  }
+  .about-box h2 {
+    margin: 20px 0px;
+  }
+  .contact-emails {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .navbar {
+    width: 87%;
+  }
+  .links li a {
+    margin-left: 14px;
+    font-size: 12px;
+  }
+  .dropdown {
+    font-size: 9px;
+  }
+  .about-us {
+    margin: 40px auto;
+    padding: 10px;
+  }
+  .about-us-info {
+    font-size: 15px;
+  }
+  .about-us-title h1 {
+    font-size: 30px;
+  }
+  .three-boxs {
+    width: 87%;
+    margin: 65px auto;
+    gap: 49px;
+  }
+  .about-box {
+    padding: 20px;
+  }
+  .about-box h2 {
+    margin: 25px 0px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .about-box p {
+    font-size: 13px;
+  }
+  .about-box img {
+    position: absolute;
+    top: -36px;
+    left: -13px;
+    height: 74px;
+    width: 134px;
+  }
+  .why-box h2 {
+    font-size: 16px;
+    margin: 15px 0px;
+  }
+  .contact-card {
+    width: 90%;
+  }
+  .contact-card p {
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+/* ###### FOR TAB  */
+@media only screen and (max-width: 767px) {
+  .navbar {
+    justify-content: space-around;
+    width: 95%;
+    margin-top: 10px;
+  }
+  .links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  /* ABOUT US */
+  .about-us {
+    margin: 38px auto;
+    gap: 16px;
+  }
+  .about-us {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  .three-boxs {
+    width: 80%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .about-box p {
+    font-size: 14px;
+  }
+  .about-box h2 {
+    margin: 20px 0px;
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+  .why-us-img {
+    transform: translate(-50%, -105%);
+  }
+  .why-us-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    width: 90%;
+    margin: 275px auto 30px;
+  }
+  .why-us-sec-container {
+    margin: 30px auto 30px;
+  }
+  .why-box {
+    width: 100%;
+    padding: 20px;
+  }
+  .why-box h2 {
+    font-size: 21px;
+    text-align: center;
+    margin: 17px 0px;
+  }
+  .contact-emails {
+    width: 100%;
+  }
+}
+/* ###### FOR MOBILE   */
+@media only screen and (max-width: 479px) {
+  /* ABOUT US */
+  .contact-emails {
+    display: block;
+  }
+  .contact-emails p {
+    margin-top: 15px;
+  }
+}

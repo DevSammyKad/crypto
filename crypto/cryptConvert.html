@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+      /* ######>>>>> Converter  <<<<<<###### */
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .img-placed img {
+        width: 560px;
+        margin: 0px auto;
+      }
+
+      .container {
+        width: 600px;
+        margin: 60px auto;
+        padding: auto;
+        height: calc(780px + 80px);
+        display: block;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      }
+
+      input[type="number"] {
+        width: 87%;
+        margin: 40px auto 10px;
+        display: block;
+        font-size: 1rem;
+        background: none;
+        line-height: 1.5;
+        padding: 12px;
+        border-radius: 6px;
+        color: #141e37;
+        border: 1px solid rgb(221, 221, 221);
+      }
+
+      input[type="number"]:focus {
+        border-color: rgb(39, 125, 217);
+      }
+
+      #select-field {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #fromCurrencyName {
+        margin-top: 0;
+        font-size: 16px;
+        color: #667c99;
+        font-weight: 600;
+        display: inline-block;
+        margin: 15px 40px 7.5px;
+      }
+
+      #fromCurrency {
+        width: 40%;
+      }
+
+      ::placeholder {
+        font-size: 1rem;
+        color: rgb(20, 30, 55);
+      }
+
+      select {
+        margin: auto;
+        display: block;
+        font-size: 1rem;
+        padding: 12px;
+        background: none;
+        border-radius: 6px;
+        color: rgb(20, 30, 55);
+        border: 1px solid rgb(221, 221, 221);
+      }
+
+      select:focus {
+        border-color: rgb(0, 113, 235);
+      }
+
+      .primary-btn {
+        display: block;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 87%;
+        cursor: pointer;
+        margin: 20px auto;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.3s;
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+        background-color: #132135;
+        border: 2px solid #132135;
+      }
+
+      .primary-btn:hover {
+        background-color: #84fbfb;
+        border: 2px solid #84fbfb;
+        color: #000;
+      }
+
+      #result {
+        color: #141e37;
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .container h4 {
+        text-align: center;
+        margin: 10px auto;
+        font-weight: 400;
+        padding: 12px 4px;
+      }
+
+      @media only screen and (max-width: 780px) {
+        .container {
+          width: 340px;
+          height: 700px;
+        }
+
+        .img-placed img {
+          width: 340px;
+        }
+
+        #fromCurrency {
+          width: 38%;
+        }
+
+        select {
+          width: 38%;
+        }
+
+        #fromCurrencyName {
+          margin: 15px 22px 7.5px;
+        }
+      }
+    </style>
+    <div class="container">
+      <h4>Let's calculate the real-time value of your crypto (USDT).</h4>
+      <hr style="width: 80%; margin: 5px auto" />
+      <div class="img-placed">
+        <img
+          src="https://i.ibb.co/WWV9Qbh/Screenshot-2023-09-21-192141.png"
+          alt="Screenshot-2023-09-21-192141"
+        />
+      </div>
+
+      <form action="">
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          placeholder="Enter Amount"
+          required
+        />
+
+        <label id="fromCurrencyName"></label>
+        <div id="select-field">
+          <select
+            name="toCurrency"
+            id="toCurrency"
+            onchange="showCurrencyName()"
+          >
+            <option value="USDT" selected="">Tether (USDT)</option>
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="BNB">Binance Coin (BNB)</option>
+            <option value="USDC">USD Coin (USDC)</option>
+            <option value="BUSD">Binance USD (BUSD)</option>
+            <option value="DOGE">Dogecoin (DOGE)</option>
+            <option value="LTC">Litecoin (LTC)</option>
+          </select>
+
+          <select
+            name="fromCurrency"
+            id="fromCurrency"
+            onchange="showFromCurrencyName()"
+          >
+            <option value="INR" selected="">INR - India Rupee</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+          </select>
+        </div>
+
+        <br />
+
+        <button type="button" id="convert" class="primary-btn">Convert</button>
+      </form>
+
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function showCurrencyName() {
+        var selectCurrency = document.getElementById("toCurrency");
+        var currencyName =
+          selectCurrency.options[selectCurrency.selectedIndex].text;
+        document.getElementById("currencyName").innerHTML = currencyName;
+      }
+
+      function showFromCurrencyName() {
+        var selectFromCurrency = document.getElementById("fromCurrency");
+        var fromCurrencyName =
+          selectFromCurrency.options[selectFromCurrency.selectedIndex].text;
+        document.getElementById("fromCurrencyName").innerHTML =
+          fromCurrencyName;
+      }
+
+      const amountInput = document.querySelector("#amount");
+      const fromCurrencySelect = document.querySelector("#fromCurrency");
+      const toCurrencySelect = document.querySelector("#toCurrency");
+      const convertButton = document.querySelector("#convert");
+      const resultParagraph = document.querySelector("#result");
+
+      convertButton.addEventListener("click", () => {
+        const amount = amountInput.value;
+        const fromCurrency = fromCurrencySelect.value;
+        const toCurrency = toCurrencySelect.value;
+        const apiKey =
+          "685419b6bedfb725bb6af07ed3dd6fef8f20a83f05c066d1eb20a10c563c7801";
+        const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${toCurrency}&tsyms=${fromCurrency}&api_key=${apiKey}`;
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const rate = data[fromCurrency];
+            const result = amount * rate + 2.5;
+
+            resultParagraph.innerHTML = ` ${amount} ${toCurrency}  = ${result.toFixed(
+              5
+            )} ${fromCurrency} `;
+          })
+          .catch((error) => {
+            resultParagraph.innerHTML = "Error: Unable to fetch exchange rate.";
+            console.error(error);
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <style>
+      /* ####### ABOUT US   ######## */
+      .about-us {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        margin: 80px auto;
+        padding: 20px;
+      }
+      .about-us-title h1 {
+        color: #212326;
+        font-size: 32px;
+      }
+      .about-us-title h1 span {
+        background: linear-gradient(100deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .about-us-info {
+        color: #797979;
+        padding: 10px;
+        letter-spacing: 1px;
+      }
+      .three-boxs {
+        width: 80%;
+        margin: 80px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+      }
+      .about-box {
+        box-shadow: 0px 0px 36px 1px rgba(56, 56, 235, 0.18);
+        padding: 40px;
+        border-radius: 20px;
+        position: relative;
+        cursor: pointer;
+      }
+      .about-box:hover {
+        box-shadow: 0px 0px 36px 19px rgba(56, 56, 235, 0.18);
+      }
+      .about-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .about-box img {
+        position: absolute;
+        top: -50px;
+        left: -30px;
+      }
+      .about-box p {
+        color: #797979;
+        letter-spacing: 0.8px;
+      }
+      /* why us */
+      .why-us-section {
+        position: relative;
+      }
+      .why-us-section > h2 {
+        text-align: center;
+        letter-spacing: 1.7px;
+        background: linear-gradient(90deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .why-us-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        width: 90%;
+        margin: 80px auto;
+      }
+      .why-us-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        z-index: -1;
+      }
+      .why-box {
+        width: 25%;
+        box-shadow: 0px 0px 36px 19px rgba(133, 133, 194, 0.18);
+        border-radius: 20px;
+        padding: 18px;
+        cursor: pointer;
+      }
+      .why-box:hover {
+        box-shadow: 0px 0px 36px 19px rgba(56, 56, 235, 0.18);
+      }
+      .why-box h2 {
+        font-size: 20px;
+        margin: 10px 0;
+        letter-spacing: 1px;
+      }
+      .why-box p {
+        font-size: 14px;
+        color: #555454;
+      }
+      /* contact us */
+      .contact-us > h2 {
+        text-align: center;
+        letter-spacing: 1.7px;
+        background: linear-gradient(90deg, #ff75ac 9.19%, #9ea6ff 44.75%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .contact-card {
+        width: 60%;
+        margin: 30px auto;
+        background: rgb(47, 43, 124);
+        border-radius: 15px;
+        padding: 40px;
+        background: -moz-linear-gradient(
+          90deg,
+          rgba(47, 43, 124, 1) 0%,
+          rgba(95, 9, 121, 1) 43%,
+          rgba(0, 212, 255, 1) 91%
+        );
+        background: -webkit-linear-gradient(
+          90deg,
+          rgba(47, 43, 124, 1) 0%,
+          rgba(95, 9, 121, 1) 43%,
+          rgba(0, 212, 255, 1) 91%
+        );
+        background: linear-gradient(
+          90deg,
+          rgba(47, 43, 124, 1) 0%,
+          rgba(95, 9, 121, 1) 43%,
+          rgba(0, 212, 255, 1) 91%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2f2b7c",endColorstr="#00d4ff",GradientType=1);
+      }
+      .contact-card p {
+        color: #ffffff;
+      }
+      .contact-card .contact-details p {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .contact-emails {
+        display: flex;
+        justify-content: space-around;
+        width: 70%;
+        margin: 15px auto 0px;
+      }
+      .contact-emails p {
+        background-color: #ffffff;
+        backdrop-filter: blur(5px);
+        padding: 10px 16px;
+        border-radius: 15px;
+      }
+      .contact-emails a {
+        color: #212326;
+        letter-spacing: 1px;
+      }
+
+      /* ###### FOR LAPTOP   */
+      @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+        .links li a {
+          margin-left: 25px;
+          font-size: 14px;
+        }
+        .three-boxs {
+          width: 90%;
+        }
+        .about-box h2 {
+          margin: 20px 0px;
+        }
+        .contact-emails {
+          width: 100%;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        .navbar {
+          width: 87%;
+        }
+        .links li a {
+          margin-left: 14px;
+          font-size: 12px;
+        }
+        .dropdown {
+          font-size: 9px;
+        }
+        .about-us {
+          margin: 40px auto;
+          padding: 10px;
+        }
+        .about-us-info {
+          font-size: 15px;
+        }
+        .about-us-title h1 {
+          font-size: 30px;
+        }
+        .three-boxs {
+          width: 87%;
+          margin: 65px auto;
+          gap: 49px;
+        }
+        .about-box {
+          padding: 20px;
+        }
+        .about-box h2 {
+          margin: 25px 0px;
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+        .about-box p {
+          font-size: 13px;
+        }
+        .about-box img {
+          position: absolute;
+          top: -36px;
+          left: -13px;
+          height: 74px;
+          width: 134px;
+        }
+        .why-box h2 {
+          font-size: 16px;
+          margin: 15px 0px;
+        }
+        .contact-card {
+          width: 90%;
+        }
+        .contact-card p {
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
+      /* ###### FOR TAB  */
+      @media only screen and (max-width: 767px) {
+        .navbar {
+          justify-content: space-around;
+          width: 95%;
+          margin-top: 10px;
+        }
+        .links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+        /* ABOUT US */
+        .about-us {
+          margin: 38px auto;
+          gap: 16px;
+        }
+        .about-us {
+          display: grid;
+          grid-template-columns: 1fr;
+          width: 90%;
+        }
+        .three-boxs {
+          width: 80%;
+          margin: 80px auto;
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .about-box p {
+          font-size: 14px;
+        }
+        .about-box h2 {
+          margin: 20px 0px;
+          text-transform: uppercase;
+          font-size: 22px;
+        }
+        .why-us-img {
+          transform: translate(-50%, -105%);
+        }
+        .why-us-container {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 30px;
+          width: 90%;
+          margin: 275px auto 30px;
+        }
+        .why-us-sec-container {
+          margin: 30px auto 30px;
+        }
+        .why-box {
+          width: 100%;
+          padding: 20px;
+        }
+        .why-box h2 {
+          font-size: 21px;
+          text-align: center;
+          margin: 17px 0px;
+        }
+        .contact-emails {
+          width: 100%;
+        }
+      }
+      /* ###### FOR MOBILE   */
+      @media only screen and (max-width: 479px) {
+        /* ABOUT US */
+        .contact-emails {
+          display: block;
+        }
+        .contact-emails p {
+          margin-top: 15px;
+        }
+      }
+    </style>
+    <!-- top NAV  -->
+    <div class="top-nav">
+      <h2>Discover Crypto Insights</h2>
+    </div>
+    <!-- MAIN NAVIGATION -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="" alt="sakdn" /></a>
+      </div>
+      <div class="links">
+        <ul>
+          <li class="link"><a href="">Add your token</a></li>
+          <li class="link"><a href="">Nft checkout</a></li>
+          <li class="link"><a href="">Faq</a></li>
+          <li class="link"><a href="">docs</a></li>
+          <li class="link"><a href="about-us.html">About us</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <h3>BUY / SELL CRYPTO</h3>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu-links">
+          <li class="mobile-menu-link"><a href="">Add your token</a></li>
+          <li class="mobile-menu-link"><a href="">Nft checkout</a></li>
+          <li class="mobile-menu-link"><a href="">Faq</a></li>
+          <li class="mobile-menu-link"><a href="">Docs</a></li>
+          <li class="mobile-menu-link"><a href="about-us.html">About us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- about section -->
+    <section>
+      <div class="about-us">
+        <div class="about-us-title">
+          <h1>We believe <span> buying crypto</span> shouldn't be so hard</h1>
+        </div>
+        <div class="about-us-info">
+          <p>
+            Welcome to Global USDT, your trusted partner in the world of
+            cryptocurrency exchanges. Established in 2017 in Pune, Maharashtra,
+            India, we have been at the forefront of the digital currency
+            revolution, providing safe, secure, and transparent services to our
+            valued clients.
+          </p>
+        </div>
+      </div>
+      <div class="three-boxs">
+        <div class="about-box" data-aos="zoom-in">
+          <h2>mission</h2>
+          <p>
+            At Global USDT, our mission is simple: to make cryptocurrency
+            transactions safe, accessible, and hassle-free for everyone. We
+            believe that the future of finance lies in blockchain technology,
+            and we're dedicated to helping our clients navigate this exciting
+            new frontier.
+          </p>
+          <img src="img/Icon.svg" alt="mission" />
+        </div>
+        <div class="about-box" data-aos="zoom-in">
+          <h2>Our Services</h2>
+          <p>
+            At Global USDT, our mission is simple: to make cryptocurrency
+            transactions safe, accessible, and hassle-free for everyone. We
+            believe that the future of finance lies in blockchain technology,
+            and we're dedicated to helping our clients navigate this exciting
+            new frontier.
+          </p>
+          <img src="img/Icon (1).svg" alt="mission" />
+        </div>
+        <div class="about-box" data-aos="zoom-in">
+          <h2>Our Track Record</h2>
+          <p>
+            At Global USDT, our mission is simple: to make cryptocurrency
+            transactions safe, accessible, and hassle-free for everyone. We
+            believe that the future of finance lies in blockchain technology,
+            and we're dedicated to helping our clients navigate this exciting
+            new frontier.
+          </p>
+          <img src="img/Icon (2).svg" alt="mission" />
+        </div>
+      </div>
+    </section>
+    <!-- WHY CHOOSE US -->
+    <section class="why-us-section">
+      <h2>Why Choose Global USDT ?</h2>
+      <hr class="hr-line" />
+      <figure class="why-us-img">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player
+          src="https://lottie.host/173a83c1-8a9b-49ac-af57-640c96317b76/3lK73xth9g.json"
+          background="#FFFFFF"
+          speed="1"
+          style="width: 100%; height: 600px"
+          loop
+          autoplay
+          direction="1"
+          mode="normal"
+        ></lottie-player>
+      </figure>
+      <div class="why-us-container">
+        <div class="why-box" data-aos="zoom-in">
+          <h2>Transparency</h2>
+          <p>
+            In a world where transparency is often lacking, we pride ourselves
+            on our commitment to openness. We believe in full disclosure and
+            clear communication in every transaction.
+          </p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+          <h2>Offline Transactions</h2>
+          <p>
+            To combat fraud and ensure the security of your investments, we
+            exclusively offer offline services. We meet with our clients in
+            person, providing a personal touch that online platforms can't match
+          </p>
+        </div>
+      </div>
+      <div class="why-us-container why-us-sec-container">
+        <div class="why-box" data-aos="zoom-in">
+          <h2>Serving Pune and Mumbai</h2>
+          <p>
+            Currently, our services are available exclusively in Pune and
+            Mumbai. By focusing on these markets, we can offer more personalized
+            and dedicated support to our clients.
+          </p>
+        </div>
+        <div class="why-box" data-aos="zoom-in">
+          <h2>Fraud Prevention</h2>
+          <p>
+            Our offline approach significantly reduces the risk of fraud.
+            Meeting our clients face-to-face allows us to verify identities and
+            ensure that transactions are conducted safely.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="contact-us">
+        <h2>Contact us today to experience</h2>
+        <hr class="hr-line" />
+        <div class="contact-card">
+          <p>
+            At Global USDT, we understand that the world of cryptocurrency can
+            be complex and intimidating. That's why we are here to simplify the
+            process and provide you with the confidence and security you need to
+            make informed decisions. Join us on this exciting journey into the
+            world of digital finance, where transparency and trust are our
+            guiding principles.
+          </p>
+          <hr class="hr-line" />
+          <div class="contact-details">
+            <p>To learn More you can get in touch with us</p>
+          </div>
+
+          <div class="contact-emails">
+            <p>
+              <a href="mailto:contact@globalusdt.in">contact@globalusdt.in</a>
+            </p>
+            <p><a href="mailto:hello@globalusdt.in"> hello@globalusdt.in</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        delay: 500,
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

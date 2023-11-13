@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+</head>
+<body>
+    <!-- top NAV  -->
+     <div class="top-nav">
+        <h2>Discover Crypto Insights</h2>
+    </div>
+    <!-- MAIN NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="" alt="sakdn"></a>
+        </div>
+        <div class="links">
+            <ul>
+                <li class="link" ><a href="">Add your token</a></li>
+                <li class="link" ><a href="">Nft checkout</a></li>
+                <li class="link" ><a href="">Faq</a></li>
+                <li class="link" ><a href="">docs</a></li>
+                <li class="link" ><a href="about-us.html">About us</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <h3>BUY / SELL CRYPTO</h3>
+        </div>
+    </nav>
+    <!-- INDEX-HERO SECTION -->
+<section class="hero-section">
+   <div class="hero-container">
+    <div class="hero-info">
+        <h1>Now buy over <span>300+ tokens instantly</span> </h1>
+        <p>"Unlock Crypto Wisdom" is your hub for up-to-the-minute crypto knowledge. Dive into our articles, analyses, and guides to stay on top of the ever-evolving crypto landscape. Join us on this journey of discovery and empowerment in the realm of digital assets.</p>
+    </div>
+    <div class="hero-img">
+        <figure>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/6f280a34-98b1-4bcc-8b75-8e88ba33df0a/2u6dbYHKHP.json" background="#1C1B37" speed="1" style="width: 100%; height: 500px" loop  autoplay direction="1" mode="normal"></lottie-player>
+        </figure>
+    </div>
+</div>
+<hr class="hr-line">
+</section>
+<!-- coin -boxes -->
+<section>
+    <div class="coin-headline">
+        <h1>SEE ALL COINS PRICE </h1>
+    </div>
+    <div class="coin-container">       
+        <div class="coins">
+            <div class="bitcoin">
+                <div class="coin-logo">
+                    <img src="img/icons8-bitcoin.svg" alt="">
+                </div>
+                <div class ="coin-price" >
+                    <h2>INR:<span id ="bitcoin"> </span> </h2>
+                    <hr class="small-hr"> 
+                <h2>bitcoin</h2>
+                </div>
+            </div>
+            <div class="ethereum">
+                <div class="coin-logo">
+                    <img src="img/icons8-ethereum.svg" alt="">
+                </div>
+                <div class ="coin-price" >
+                    <h2>INR: <span id ="ethereum" ></span> </h2>
+                    <hr class="small-hr">
+                    <h2>ethereum</h2>
+                </div>
+            </div>
+            <div class="litecoin">
+                <div class="coin-logo">
+                    <img src="img/litecoin.png" alt="">
+                </div>
+                <div class ="coin-price" >
+                    <h2>INR: <span id ="litecoin" ></span> </h2>
+                    <hr class="small-hr">
+                    <h2>litecoin</h2>
+                </div>
+            </div>
+            <div class="dogecoin">
+                <div class="coin-logo">
+                    <img src="img/doge.png" alt="">
+                </div>
+                <div class ="coin-price" >
+                    <h2>INR: <span id ="dogecoin" ></span> </h2>
+                    <hr class="small-hr">
+                    <h2>dogecoin</h2>
+                </div>
+            </div>
+        </div>
+        <div class="coin-viewall">
+            <a href="all-btc.html"><p>SEE ALL COINS</p></a>
+        </div>
+    </div>
+</section>
+<!-- script for live btc price -->
+<script>
+    // Function to fetch cryptocurrency prices in INR
+    function getCryptoPrices() {
+      const symbols = ['bitcoin', 'ethereum', 'litecoin', 'dogecoin'];
+
+      symbols.forEach(symbol => {
+        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${symbol}&vs_currencies=inr`)
+          .then(response => response.json())
+          .then(data => {
+            const priceElement = document.getElementById(symbol);
+            if (priceElement) {
+              priceElement.textContent = `${data[symbol].inr} `;
+            }
+          })
+          .catch(error => {
+            console.error(`Error fetching data for ${symbol}: ${error}`);
+          });
+      });
+    }
+
+    // Call the function to fetch cryptocurrency prices
+    getCryptoPrices();
+  </script>
+</body>
+</html>
